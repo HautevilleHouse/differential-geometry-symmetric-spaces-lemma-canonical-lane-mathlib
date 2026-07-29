@@ -1,0 +1,19 @@
+import canonicalLaneMathlib.AdmissibleClass
+import DifferentialGeometrySymmetricSpacesLemmaCanonicalLaneLean.SymmetricSpaceCurvature
+import DifferentialGeometrySymmetricSpacesLemmaCanonicalLaneLean.HolonomyAlgebra
+import DifferentialGeometrySymmetricSpacesLemmaCanonicalLaneLean.CartanDecomposition
+import DifferentialGeometrySymmetricSpacesLemmaCanonicalLaneLean.GeodesicSymmetry
+import DifferentialGeometrySymmetricSpacesLemmaCanonicalLaneLean.SymmetricSpaceClassification
+
+namespace HautevilleHouse
+namespace DifferentialGeometrySymmetricSpacesLemmaCanonicalLaneLean
+
+def ConstrainedSymmetricSpaceLemmaClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_symmetric_space_lemma_endgame (A : AdmissibleClass) :
+    ConstrainedSymmetricSpaceLemmaClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end DifferentialGeometrySymmetricSpacesLemmaCanonicalLaneLean
+end HautevilleHouse
